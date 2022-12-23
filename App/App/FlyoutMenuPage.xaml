@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App4"
+             xmlns:views="clr-namespace:App4.Views"
+             Title="FlyoutMenu"
+             x:Class="App4.FlyoutMenuPage">
+    
+    <StackLayout>
+        <ListView x:Name="listview" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:ItemPage}">
+                    <local:ItemPage Title="Provider" IconSource="home.png" TargetPage="{x:Type views:ProviderPage}"/>
+                    <local:ItemPage Title="Region" IconSource="home.png" TargetPage="{x:Type views:RgeionPage}"/>
+                    <local:ItemPage Title="Tariff" IconSource="home.png" TargetPage="{x:Type views:TariffPage}"/>
+                </x:Array>
+            </ListView.ItemsSource>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="33"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}"/>
+                            <Label Grid.Column="1" Text="{Binding Title}" VerticalOptions="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>
