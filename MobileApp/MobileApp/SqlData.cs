@@ -65,7 +65,6 @@ namespace MobileApp
             var response = await client.DeleteAsync($"http://10.0.2.2:5276/api/provider/{provider.ProviderId}");
             
         }
-        //-----------------------------------
         public async Task CreateRegion(RegionModel reg)
         {
             string jsonString = JsonSerializer.Serialize(reg, options);
@@ -96,7 +95,6 @@ namespace MobileApp
         {
             var response = await client.DeleteAsync($"http://10.0.2.2:5276/api/region/{reg.RegionId}");
         }
-        //---------------
         public async Task CreateTariff(TariffModel tariff)
         {
             string jsonString = JsonSerializer.Serialize(tariff, options);
